@@ -47,4 +47,20 @@ class MQTT {
         }
         return messageCard
     }
+
+    fun sendMessage(topic: String, message: String) {
+        try {
+            val mqttClient = MqttClient(brokerUrl, clientId, persistence)
+            mqttClient.connect()
+            val mqttMessage = MqttMessage()
+            mqttMessage.payload = message.toByteArray()
+            mqttClient.publish(topic, mqttMessage)
+            println("message published : $message with topic $topic")
+            mqttClient.disconnect()
+        } catch (e: MqttException) {
+            println("Error sending message: " + e.message)
+        }
+    }
+
+
 }

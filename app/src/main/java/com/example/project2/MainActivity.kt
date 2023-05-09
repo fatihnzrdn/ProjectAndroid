@@ -16,8 +16,10 @@ class MainActivity : AppCompatActivity() {
        switchLampu.setOnClickListener{
            if(switchLampu.isChecked){
                text.setText("ON")
+               MQTT().sendMessage("Bedroom/lamp","1")
            } else{
                text.setText("OFF")
+               MQTT().sendMessage("Bedroom/lamp","0")
            }
        }
 
