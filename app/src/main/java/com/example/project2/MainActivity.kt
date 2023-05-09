@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Switch
 import android.widget.TextView
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,8 +13,13 @@ class MainActivity : AppCompatActivity() {
         var text = findViewById<TextView>(R.id.textView)
         var switchLampu = findViewById<Switch>(R.id.switch1)
 
-       switchLampu.setOnCheckedChangeListener
-
+       switchLampu.setOnClickListener{
+           if(switchLampu.isChecked){
+               text.setText("ON")
+           } else{
+               text.setText("OFF")
+           }
+       }
 
     }
 }
