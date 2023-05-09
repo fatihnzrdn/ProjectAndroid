@@ -12,22 +12,25 @@
         android:id="@+id/switch1"
         android:layout_width="108dp"
         android:layout_height="63dp"
+        android:checked="true"
         android:gravity="center"
         android:text="LAMPU"
-        tools:layout_editor_absoluteX="139dp"
-        tools:layout_editor_absoluteY="235dp"
-        android:checked="true"
         android:textOff="OFF"
         android:textOn="ON"
-        />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="69dp"
+        android:layout_marginTop="16dp"
         android:text="TextView"
-        app:layout_constraintTop_toTopOf="@+id/switch1"
-        tools:layout_editor_absoluteX="142dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
