@@ -7,19 +7,24 @@ import android.widget.TextView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var mqttClient: MQTT
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         var text = findViewById<TextView>(R.id.textView)
         var switchLampu = findViewById<Switch>(R.id.switch1)
 
+        mqttClient = MQTT()
+        mqttClient.connectBroker(applicationContext)
+
        switchLampu.setOnClickListener{
            if(switchLampu.isChecked){
                text.setText("ON")
-               MQTT().sendMessage("Bedroom/lamp","1")
+               mqttClient.sendMessage("1")
            } else{
                text.setText("OFF")
-               MQTT().sendMessage("Bedroom/lamp","0")
+               mqttClient.sendMessage("0")
            }
        }
 
