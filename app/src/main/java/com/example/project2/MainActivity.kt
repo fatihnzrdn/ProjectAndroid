@@ -12,22 +12,24 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var text = findViewById<TextView>(R.id.textView)
-        var switchLampu = findViewById<Switch>(R.id.switch1)
 
         mqttClient = MQTT()
         mqttClient.connectBroker(applicationContext)
 
-       switchLampu.setOnClickListener{
-           if(switchLampu.isChecked){
-               text.setText("ON")
-               mqttClient.sendMessage("1")
-           } else{
-               text.setText("OFF")
-               mqttClient.sendMessage("0")
-           }
-       }
+    }
 
+    fun switchLamp(Android: android.view.View){
+        var text = findViewById<TextView>(R.id.textView)
+        var switchLampu = findViewById<Switch>(R.id.switch1)
+        switchLampu.setOnClickListener{
+            if(switchLampu.isChecked){
+                text.setText("ON")
+                mqttClient.sendMessage("1")
+            } else{
+                text.setText("OFF")
+                mqttClient.sendMessage("0")
+            }
+        }
     }
 }
 

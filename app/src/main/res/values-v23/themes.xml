@@ -1,12 +1,12 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
     <style name="Base.Theme.Project2" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:statusBarColor">#F1E35E</item>  <!-- Set the desired color -->
-        <item name="android:windowLightStatusBar">true</item>        <!-- Optional: Light status bar icons -->
+        <item name="android:windowLightStatusBar">true
+        </item>        <!-- Optional: Light status bar icons -->
 
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
-
-    <style name="Theme.Project2" parent="Base.Theme.Project2" />
 </resources>
