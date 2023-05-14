@@ -12,7 +12,7 @@ class MainMenu : AppCompatActivity() {
 
         var buttonKamar = findViewById<View>(R.id.kamar1)
         buttonKamar.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, MainRoom1::class.java)
             startActivity(intent)
         }
 

@@ -10,7 +10,7 @@
     <View
         android:id="@+id/HeaderRect"
         android:layout_width="411dp"
-        android:layout_height="78dp"
+        android:layout_height="100dp"
         android:background="#F1E35E"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -23,7 +23,6 @@
         android:layout_height="120dp"
         android:layout_marginTop="52dp"
         android:background="@drawable/rounded_corner"
-        android:onClick="kamar1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,12 +43,13 @@
         android:id="@+id/textViewUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="76dp"
         android:fontFamily="@font/poppins_semibold"
         android:gravity="center"
-        android:text="User"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="User's room"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/HeaderRect"
+        app:layout_constraintStart_toStartOf="@+id/HeaderRect"
         app:layout_constraintTop_toTopOf="@+id/HeaderRect" />
 
     <TextView
@@ -60,9 +60,10 @@
         android:layout_marginTop="12dp"
         android:fontFamily="@font/poppins_semibold"
         android:gravity="center"
-        android:text="kamar 1"
+        android:text="Room 1"
         app:layout_constraintStart_toStartOf="@+id/kamar1"
-        app:layout_constraintTop_toTopOf="@+id/kamar1" />
+        app:layout_constraintTop_toTopOf="@+id/kamar1"
+        tools:textSize="20sp" />
 
     <TextView
         android:id="@+id/textView4"
@@ -72,7 +73,8 @@
         android:layout_marginTop="12dp"
         android:fontFamily="@font/poppins_semibold"
         android:gravity="center"
-        android:text="Kamar 2"
+        android:text="Room 2"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/kamar2"
         app:layout_constraintTop_toTopOf="@+id/kamar2" />
 
@@ -94,8 +96,18 @@
         app:layout_constraintBottom_toBottomOf="@+id/kamar2"
         app:layout_constraintEnd_toEndOf="@+id/kamar2"
         app:layout_constraintTop_toTopOf="@+id/kamar2"
-        app:layout_constraintVertical_bias="0.6"
         app:srcCompat="@drawable/bedroom" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="29dp"
+        android:layout_height="26dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewUser"
+        app:layout_constraintEnd_toStartOf="@+id/textViewUser"
+        app:layout_constraintHorizontal_bias="0.61"
+        app:layout_constraintStart_toStartOf="@+id/HeaderRect"
+        app:layout_constraintTop_toTopOf="@+id/textViewUser"
+        app:srcCompat="@drawable/backbutton1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
