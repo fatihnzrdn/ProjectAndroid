@@ -20,13 +20,12 @@
 
     <Switch
         android:id="@+id/switchLamp"
-        android:layout_width="142dp"
-        android:layout_height="63dp"
+        android:layout_width="55dp"
+        android:layout_height="57dp"
         android:checked="false"
         android:fontFamily="@font/poppins_semibold"
-        android:gravity="center|start"
+        android:gravity="center"
         android:onClick="switchLamp"
-        android:text="Lamp"
         android:textOff="OFF"
         android:textOn="ON"
         android:textSize="24sp"
@@ -34,7 +33,7 @@
         android:trackTint="@color/switch_track"
         app:layout_constraintBottom_toBottomOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="@+id/view2"
-        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintHorizontal_bias="0.352"
         app:layout_constraintStart_toStartOf="@+id/view2"
         app:layout_constraintTop_toTopOf="@+id/view2" />
 
@@ -97,31 +96,53 @@
 
     <Switch
         android:id="@+id/switch1"
-        android:layout_width="142dp"
-        android:layout_height="63dp"
+        android:layout_width="56dp"
+        android:layout_height="52dp"
         android:fontFamily="@font/poppins_semibold"
         android:gravity="center|start"
-        android:text="Lock"
         android:textSize="24dp"
         android:thumbTint="@color/switch_thumb"
         android:trackTint="@color/switch_track"
         app:layout_constraintBottom_toBottomOf="@+id/view3"
         app:layout_constraintEnd_toEndOf="@+id/view3"
-        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintHorizontal_bias="0.346"
         app:layout_constraintStart_toStartOf="@+id/view3"
-        app:layout_constraintTop_toTopOf="@+id/view3"
-        app:layout_constraintVertical_bias="0.508" />
+        app:layout_constraintTop_toTopOf="@+id/view3" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_semibold"
-        android:text="TextView"
+        android:text="Locked"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/view3"
         app:layout_constraintEnd_toEndOf="@+id/view3"
         app:layout_constraintHorizontal_bias="0.86"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintTop_toTopOf="@+id/view3" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Lamp"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintEnd_toStartOf="@+id/switchLamp"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/view2" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Lock"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view3"
+        app:layout_constraintEnd_toStartOf="@+id/switch1"
         app:layout_constraintStart_toStartOf="@+id/view3"
         app:layout_constraintTop_toTopOf="@+id/view3" />
 

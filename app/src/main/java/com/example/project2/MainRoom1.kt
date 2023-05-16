@@ -23,8 +23,6 @@ class MainRoom1 : AppCompatActivity() {
             startActivity(intent)
         }
 
-
-
     }
 
     fun switchLamp(Android: android.view.View){

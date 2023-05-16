@@ -11,7 +11,7 @@
         android:id="@+id/HeaderRect"
         android:layout_width="411dp"
         android:layout_height="100dp"
-        android:background="#F1E35E"
+        android:background="#f5ea8a"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,19 +53,6 @@
         app:layout_constraintTop_toTopOf="@+id/HeaderRect" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:gravity="center"
-        android:text="Room 1"
-        app:layout_constraintStart_toStartOf="@+id/kamar1"
-        app:layout_constraintTop_toTopOf="@+id/kamar1"
-        tools:textSize="20sp" />
-
-    <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -77,6 +64,19 @@
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/kamar2"
         app:layout_constraintTop_toTopOf="@+id/kamar2" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="center"
+        android:text="Room 1"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/kamar1"
+        app:layout_constraintTop_toTopOf="@+id/kamar1" />
 
     <ImageView
         android:id="@+id/imageView"
