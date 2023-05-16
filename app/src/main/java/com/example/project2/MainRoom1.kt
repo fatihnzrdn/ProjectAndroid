@@ -3,6 +3,7 @@ package com.example.project2
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.service.autofill.UserData
 import android.widget.ImageView
 import android.widget.Switch
 import android.widget.TextView
@@ -34,7 +35,6 @@ class MainRoom1 : AppCompatActivity() {
                 mqttClient.sendMessage("1")
             } else{
                 text.setText("OFF")
-                mqttClient.sendMessage("0")
             }
         }
     }
