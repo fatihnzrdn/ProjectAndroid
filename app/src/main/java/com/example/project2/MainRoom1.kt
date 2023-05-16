@@ -35,6 +35,7 @@ class MainRoom1 : AppCompatActivity() {
                 mqttClient.sendMessage("1")
             } else{
                 text.setText("OFF")
+                mqttClient.sendMessage("0")
             }
         }
     }
