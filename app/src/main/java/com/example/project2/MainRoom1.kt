@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.service.autofill.UserData
+import android.view.View
 import android.widget.ImageView
 import android.widget.Switch
 import android.widget.TextView
@@ -23,7 +24,6 @@ class MainRoom1 : AppCompatActivity() {
             val intent = Intent(this, MainMenu::class.java)
             startActivity(intent)
         }
-
     }
 
     fun switchLamp(Android: android.view.View){
@@ -32,13 +32,29 @@ class MainRoom1 : AppCompatActivity() {
         switchLampu.setOnClickListener{
             if(switchLampu.isChecked){
                 text.setText("ON")
-                mqttClient.sendMessage("1")
+                mqttClient.sendMessage("1","najwan/Bedroom/lamp")
             } else{
                 text.setText("OFF")
-                mqttClient.sendMessage("0")
+                mqttClient.sendMessage("0","najwan/Bedroom/lamp")
             }
         }
     }
+
+    fun switchLock(Android: android.view.View){
+        var text = findViewById<TextView>(R.id.textViewLock)
+        var switchLock = findViewById<Switch>(R.id.switchLock)
+        switchLock.setOnClickListener{
+            if(switchLock.isChecked){
+                text.setText("Unlocked")
+                mqttClient.sendMessage("1","najwan/Bedroom/lock")
+            } else{
+                text.setText("Locked")
+                mqttClient.sendMessage("0","najwan/Bedroom/lock")
+            }
+        }
+    }
+
+
 }
 
 

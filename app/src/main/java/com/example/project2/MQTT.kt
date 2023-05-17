@@ -18,7 +18,8 @@ class MQTT {
 
     private val brokerUrl = "tcp://test.mosquitto.org:1883"
     private val clientId = "clientId"
-    private val topic = "najwan/Bedroom/lamp"
+    private val topicLamp = "najwan/Bedroom/lamp"
+    private val topicLock = "najwan/Bedroom/lock"
 
     private lateinit var client: MqttAndroidClient
 
@@ -44,12 +45,13 @@ class MQTT {
         }
     }
 
-    fun sendMessage(message: String) {
+    fun sendMessage(message: String, topic: String) {
         val mqttMessage = MqttMessage(message.toByteArray())
         mqttMessage.qos = 1
         try {
             client.publish(topic, mqttMessage)
             Log.d(TAG, "Message sent: $message")
+            Log.d(TAG, "Sent to: $topic")
         } catch (ex: MqttException) {
             Log.e(TAG, "Failed to send message: $ex")
         }
@@ -57,7 +59,7 @@ class MQTT {
 
     fun receiveMessage() {
         try {
-            client.subscribe(topic, 1
+            client.subscribe(topicLamp, 1
             ) { topic, message -> Log.d(TAG, "Message received: ${message?.toString()}") }
         } catch (ex: MqttException) {
             Log.e(TAG, "Failed to subscribe to topic: $ex")
@@ -66,8 +68,10 @@ class MQTT {
 
     private fun subscribeToTopic() {
         try {
-            client.subscribe(topic, 1)
-            Log.d(TAG, "Subscribed to topic: $topic")
+            client.subscribe(topicLamp, 1)
+            client.subscribe(topicLock, 1)
+            Log.d(TAG, "Subscribed to topic: $topicLamp")
+            Log.d(TAG, "Subscribed to topic: $topicLock")
         } catch (ex: MqttException) {
             Log.e(TAG, "Failed to subscribe to topic: $ex")
         }

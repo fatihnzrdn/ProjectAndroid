@@ -95,11 +95,12 @@
         app:layout_constraintTop_toBottomOf="@+id/view2" />
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/switchLock"
         android:layout_width="56dp"
         android:layout_height="52dp"
         android:fontFamily="@font/poppins_semibold"
         android:gravity="center|start"
+        android:onClick="switchLock"
         android:textSize="24dp"
         android:thumbTint="@color/switch_thumb"
         android:trackTint="@color/switch_track"
@@ -110,7 +111,7 @@
         app:layout_constraintTop_toTopOf="@+id/view3" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textViewLock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_semibold"
@@ -142,7 +143,7 @@
         android:text="Lock"
         android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="@+id/view3"
-        app:layout_constraintEnd_toStartOf="@+id/switch1"
+        app:layout_constraintEnd_toStartOf="@+id/switchLock"
         app:layout_constraintStart_toStartOf="@+id/view3"
         app:layout_constraintTop_toTopOf="@+id/view3" />
 

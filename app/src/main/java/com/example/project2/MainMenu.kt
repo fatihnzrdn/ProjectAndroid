@@ -12,10 +12,15 @@ class MainMenu : AppCompatActivity() {
 
         var buttonKamar = findViewById<View>(R.id.kamar1)
         buttonKamar.setOnClickListener{
-            val intent = Intent(this, SignIn::class.java)
-            startActivity(intent)
+            val intentRoom1 = Intent(this, MainRoom1::class.java)
+            startActivity(intentRoom1)
         }
 
+        var backtologin = findViewById<View>(R.id.imageView3)
+        backtologin.setOnClickListener{
+            val intentBack = Intent(this, SignIn::class.java)
+            startActivity(intentBack)
+        }
     }
 
 
