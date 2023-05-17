@@ -64,7 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="88dp"
         android:fontFamily="@font/poppins_semibold"
-        android:text="Room 1"
+        android:text="Room"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintStart_toStartOf="@+id/view"

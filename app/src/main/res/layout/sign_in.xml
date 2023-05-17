@@ -51,7 +51,7 @@
         android:layout_height="49dp"
         android:ems="10"
         android:fontFamily="@font/poppins_semibold"
-        android:hint="EMAIL"
+        android:hint="USERNAME"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toTopOf="@+id/passwordText"
         app:layout_constraintEnd_toEndOf="@+id/signInBackground"

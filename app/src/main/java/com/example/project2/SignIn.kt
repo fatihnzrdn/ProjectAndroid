@@ -23,9 +23,6 @@ class SignIn : AppCompatActivity() {
         setContentView(R.layout.sign_in)
         ref = FirebaseDatabase.getInstance().getReference("USER")
 
-
-
-
         var SignUpButton = findViewById<Button>(R.id.button)
         SignUpButton.setOnClickListener{
             if(findViewById<EditText>(R.id.emailText).text.toString().isEmpty()){
