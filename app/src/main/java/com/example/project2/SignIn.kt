@@ -50,6 +50,8 @@ class SignIn : AppCompatActivity() {
                 return@setOnClickListener
             } else {
                 readData()
+                var intent = Intent(this, Loading::class.java)
+                startActivity(intent)
             }
         }
     }
@@ -86,14 +88,14 @@ class SignIn : AppCompatActivity() {
                 if(dataSnapshot.exists()){
                     for (h in dataSnapshot.children){
                         val user = h.getValue(Users::class.java)
-                        if (user!!.email == email1 && user!!.pass == pass1){
-                            Toast.makeText(this@SignIn, "Success", Toast.LENGTH_SHORT).show()
-                            email.setText("")
-                            pass.setText("")
-                            var intent = Intent(this@SignIn, MainMenu::class.java)
-                            startActivity(intent)
-                        } else {
-                            Toast.makeText(this@SignIn, "Failed", Toast.LENGTH_SHORT).show()
+                        if (user != null) {
+                            if (user.email == email1 && user.pass == pass1){
+                                Toast.makeText(this@SignIn, "Success", Toast.LENGTH_SHORT).show()
+                                email.setText("")
+                                pass.setText("")
+                            } else {
+                                Toast.makeText(this@SignIn, "Failed", Toast.LENGTH_SHORT).show()
+                            }
                         }
                     }
                 }

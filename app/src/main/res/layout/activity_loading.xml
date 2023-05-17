@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".successSignUp">
+    tools:context=".Loading">
 
     <View
-        android:id="@+id/view4"
+        android:id="@+id/view5"
         android:layout_width="240dp"
         android:layout_height="340dp"
         android:background="@drawable/rounded_corner"
@@ -17,26 +17,25 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/imageView4"
-        android:layout_width="161dp"
-        android:layout_height="193dp"
-        android:src="@drawable/success"
-        app:layout_constraintBottom_toTopOf="@+id/textView5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view4" />
+        android:id="@+id/imageView5"
+        android:layout_width="188dp"
+        android:layout_height="170dp"
+        android:src="@drawable/lamploading"
+        app:layout_constraintBottom_toTopOf="@+id/textView8"
+        app:layout_constraintEnd_toEndOf="@+id/view5"
+        app:layout_constraintStart_toStartOf="@+id/view5"
+        app:layout_constraintTop_toTopOf="@+id/view5" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
         android:fontFamily="@font/poppins_semibold"
-        android:text="Success!"
+        android:text="Loading . . ."
         android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="@+id/view4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.929" />
-
+        app:layout_constraintBottom_toBottomOf="@+id/view5"
+        app:layout_constraintEnd_toEndOf="@+id/view5"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="@+id/view5" />
 </androidx.constraintlayout.widget.ConstraintLayout>
