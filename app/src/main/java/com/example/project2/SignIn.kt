@@ -3,6 +3,7 @@ package com.example.project2
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -35,8 +36,11 @@ class SignIn : AppCompatActivity() {
                 return@setOnClickListener
             } else {
                 saveData()
+                Handler().postDelayed({
+                    val intent = Intent(this, successSignUp::class.java)
+                    startActivity(intent)
+                }, 1000)
             }
-
         }
 
         var SignInButton = findViewById<Button>(R.id.button2)
