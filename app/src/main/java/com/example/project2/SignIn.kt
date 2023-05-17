@@ -22,6 +22,9 @@ class SignIn : AppCompatActivity() {
         setContentView(R.layout.sign_in)
         ref = FirebaseDatabase.getInstance().getReference("USER")
 
+
+
+
         var SignUpButton = findViewById<Button>(R.id.button)
         SignUpButton.setOnClickListener{
             if(findViewById<EditText>(R.id.emailText).text.toString().isEmpty()){
@@ -32,32 +35,33 @@ class SignIn : AppCompatActivity() {
                 return@setOnClickListener
             } else {
                 saveData()
-                //var intent = Intent(this, MainMenu::class.java)
-                //startActivity(intent)
             }
 
         }
 
         var SignInButton = findViewById<Button>(R.id.button2)
         SignInButton.setOnClickListener{
-            if(findViewById<EditText>(R.id.emailText2).text.toString().isEmpty()){
-                findViewById<EditText>(R.id.emailText2).error = "Please enter email"
+            if(findViewById<EditText>(R.id.emailText).text.toString().isEmpty()){
+                findViewById<EditText>(R.id.emailText).error = "Please enter email"
                 return@setOnClickListener
-            } else if (findViewById<EditText>(R.id.passwordText2).text.toString().isEmpty()) {
-                findViewById<EditText>(R.id.passwordText2).error = "Please enter password"
+            } else if (findViewById<EditText>(R.id.passwordText).text.toString().isEmpty()) {
+                findViewById<EditText>(R.id.passwordText).error = "Please enter password"
                 return@setOnClickListener
             } else {
                 readData()
+                var intent = Intent(this@SignIn, MainMenu::class.java)
+                startActivity(intent)
             }
         }
     }
-    var email = findViewById<EditText>(R.id.emailText)
-    var pass = findViewById<EditText>(R.id.passwordText)
-    val email1 = email.text.toString()
-    val pass1 = pass.text.toString()
-    val userId = ref.push().key.toString()
+
 
     fun saveData (){
+        var email = findViewById<EditText>(R.id.emailText)
+        var pass = findViewById<EditText>(R.id.passwordText)
+        val email1 = email.text.toString()
+        val pass1 = pass.text.toString()
+        val userId = ref.push().key.toString()
 
 
         val user = Users(userId, email1, pass1)
@@ -70,18 +74,25 @@ class SignIn : AppCompatActivity() {
     }
 
     fun readData (){
+        var email = findViewById<EditText>(R.id.emailText)
+        var pass = findViewById<EditText>(R.id.passwordText)
+        val email1 = email.text.toString()
+        val pass1 = pass.text.toString()
+        val userId = ref.push().key.toString()
 
         val user = Users(userId, email1, pass1)
 
         ref.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                if(snapshot.exists()){
-                    for (h in snapshot.children){
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                if(dataSnapshot.exists()){
+                    for (h in dataSnapshot.children){
                         val user = h.getValue(Users::class.java)
-                        if (user!!.email != email1 && user!!.pass != pass1){
+                        if (user!!.email == email1 && user!!.pass == pass1){
                             Toast.makeText(this@SignIn, "Success", Toast.LENGTH_SHORT).show()
                             email.setText("")
                             pass.setText("")
+                        } else {
+                            Toast.makeText(this@SignIn, "Failed", Toast.LENGTH_SHORT).show()
                         }
                     }
                 }
