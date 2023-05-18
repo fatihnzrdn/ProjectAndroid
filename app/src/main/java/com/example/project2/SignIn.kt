@@ -93,8 +93,6 @@ class SignIn : AppCompatActivity() {
                                 Toast.makeText(this@SignIn, "Success", Toast.LENGTH_SHORT).show()
                                 email.setText("")
                                 pass.setText("")
-                            } else {
-                                Toast.makeText(this@SignIn, "Failed", Toast.LENGTH_SHORT).show()
                             }
                         }
                     }
