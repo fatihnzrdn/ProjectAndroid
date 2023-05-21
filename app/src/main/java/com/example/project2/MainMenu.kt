@@ -12,18 +12,18 @@ class MainMenu : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_menu)
 
-        var buttonKamar1 = findViewById<View>(R.id.kamar1)
+        val buttonKamar1 = findViewById<View>(R.id.kamar1)
         buttonKamar1.setOnClickListener{
             val intentRoom1 = Intent(this, MainRoom1::class.java)
             startActivity(intentRoom1)
         }
-        var buttonKamar2 = findViewById<View>(R.id.kamar2)
+        val buttonKamar2 = findViewById<View>(R.id.kamar2)
         buttonKamar2.setOnClickListener{
             val intentRoom1 = Intent(this, MainRoom1::class.java)
             startActivity(intentRoom1)
         }
 
-        var backtologin = findViewById<View>(R.id.imageView3)
+        val backtologin = findViewById<View>(R.id.imageView3)
         backtologin.setOnClickListener{
             val intentBack = Intent(this, SignUp::class.java)
             startActivity(intentBack)

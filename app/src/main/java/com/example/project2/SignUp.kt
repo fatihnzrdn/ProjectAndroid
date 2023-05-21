@@ -50,6 +50,7 @@ class SignUp : AppCompatActivity() {
             findViewById<EditText>(R.id.passwordText).error = "Please enter password"
             return
         } else {
+            userData.readData(email, password)
             val intent = Intent(this, Loading::class.java)
             startActivity(intent)
         }
