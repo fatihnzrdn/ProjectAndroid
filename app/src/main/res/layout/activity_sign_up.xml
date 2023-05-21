@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignIn">
+    tools:context=".SignUp">
 
     <View
         android:id="@+id/signInBackground"
@@ -37,6 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_semibold"
+        android:onClick="signInButton"
         android:text="Sign In"
         app:layout_constraintBottom_toBottomOf="@+id/signInBackground"
         app:layout_constraintEnd_toEndOf="@+id/signInBackground"
@@ -77,6 +78,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_semibold"
+        android:onClick="signUpButton"
         android:text="Sign Up"
         app:layout_constraintBottom_toBottomOf="@+id/signInBackground"
         app:layout_constraintEnd_toEndOf="@+id/signInBackground"
@@ -84,5 +86,18 @@
         app:layout_constraintStart_toStartOf="@+id/signInBackground"
         app:layout_constraintTop_toBottomOf="@+id/passwordText"
         app:layout_constraintVertical_bias="0.552" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="210dp"
+        android:layout_height="71dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:gravity="center"
+        android:text="BRODI"
+        android:textSize="36dp"
+        app:layout_constraintBottom_toTopOf="@+id/signInBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

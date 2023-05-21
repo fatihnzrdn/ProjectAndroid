@@ -25,7 +25,7 @@ class MainMenu : AppCompatActivity() {
 
         var backtologin = findViewById<View>(R.id.imageView3)
         backtologin.setOnClickListener{
-            val intentBack = Intent(this, SignIn::class.java)
+            val intentBack = Intent(this, SignUp::class.java)
             startActivity(intentBack)
         }
     }

@@ -1,42 +1,46 @@
 package com.example.project2
 
 import android.util.Log
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
+import android.widget.Toast
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class userData {
+    private lateinit var ref:DatabaseReference
 
-    val db = Firebase.firestore
-    val TAG = "userData"
-
-    fun addData(){
-        val user = hashMapOf(
-            "first" to "Ada",
-            "last" to "Lovelace",
-            "born" to 1815,
-        )
-
-        // Add a new document with a generated ID
-        db.collection("users")
-            .add(user)
-            .addOnSuccessListener { documentReference ->
-                Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
-            }
-            .addOnFailureListener { e ->
-                Log.w(TAG, "Error adding document", e)
-            }
+    fun saveData(inputEmail: String, inputPassword: String){
+        ref = FirebaseDatabase.getInstance().getReference("USER")
+        val userID = ref.push().key.toString()
+        val user = Users(userID, inputEmail, inputPassword)
+        ref.child(userID).setValue(user).addOnCompleteListener{
+            Log.d ("SignUp", "Success")
+        }
     }
 
-    fun readData(){
-        db.collection("users")
-            .get()
-            .addOnSuccessListener { result ->
-                for (document in result) {
-                    Log.d(TAG, "${document.id} => ${document.data}")
+    fun readData(inputEmail: String, inputPassword: String){
+        ref = FirebaseDatabase.getInstance().getReference("USER")
+        ref.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if(snapshot.exists()){
+                    for (userSnapshot in snapshot.children){
+                        val user = userSnapshot.getValue(Users::class.java)
+                        if (user != null) {
+                            if (user.email == inputEmail && user.pass == inputPassword){
+                                Log.d("SignIn", "Success")
+                            }
+                        }
+                    }
                 }
             }
-            .addOnFailureListener { exception ->
-                Log.w(TAG, "Error getting documents.", exception)
+
+            override fun onCancelled(error: DatabaseError) {
+                Log.d("SignIn", "Error")
             }
+        })
     }
+
+
 }

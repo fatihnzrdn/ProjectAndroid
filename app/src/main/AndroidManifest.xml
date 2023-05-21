@@ -24,18 +24,13 @@
             android:name=".successSignUp"
             android:exported="false" />
         <activity
-            android:name=".SuccessSignUp"
-            android:exported="false"
-            android:label="@string/title_activity_success_sign_up"
-            android:theme="@style/Theme.Project2" />
-        <activity
             android:name=".MainMenu"
             android:exported="true" />
 
         <service android:name="org.eclipse.paho.android.service.MqttService" />
 
         <activity
-            android:name=".SignIn"
+            android:name=".SignUp"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
